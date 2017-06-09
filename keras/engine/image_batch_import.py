@@ -39,7 +39,12 @@ class ImageBatchImporter:
         return
 
     # Initiate variables on creation
-    def __init__(self, train_path, img_dim, classes):
+    def __init__(self, train_path, img_dim, classes, **flags):
+        # Check Flags
+        self.quiet = False
+        if ('quiet' in flags){
+            self.quiet = flags['quiet']
+        }
         # Instantiate Variables
         self.img_dim = img_dim
         self.train_path = train_path
